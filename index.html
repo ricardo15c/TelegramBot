@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Vaqueros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="game">
+            <h1>¡Bienvenido al juego de vaqueros!</h1>
+            <canvas id="gameCanvas"></canvas>
+            <p>Tiempo restante: <span id="time">60</span> segundos</p>
+            <p>Balas restantes: <span id="bullets">6</span></p>
+            <p>Puntos acumulados: <span id="points">0</span></p>
+            <p>Vida restante: <span id="lives">2</span></p>
+            <button id="reloadButton">Recargar</button>
+        </div>
+
+        <div id="referidos" style="display:none;">
+            <h2>Referidos</h2>
+            <p>Aquí puedes invitar a tus amigos para ganar más puntos.</p>
+            <!-- Añadir formulario o enlace para referidos -->
+        </div>
+
+        <div id="tareas-diarias" style="display:none;">
+            <h2>Tareas Diarias</h2>
+            <p>Completa tareas para ganar puntos adicionales.</p>
+            <!-- Añadir tareas diarias aquí -->
+        </div>
+        
+        <div id="menu">
+            <button onclick="showSection('game')">Jugar</button>
+            <button onclick="showSection('referidos')">Referidos</button>
+            <button onclick="showSection('tareas-diarias')">Tareas Diarias</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('game').style.display = 'none';
+            document.getElementById('referidos').style.display = 'none';
+            document.getElementById('tareas-diarias').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Mostrar la sección de juego por defecto
+        showSection('game');
+    </script>
+</body>
+</html>
